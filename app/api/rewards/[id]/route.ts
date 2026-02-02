@@ -35,6 +35,7 @@ export async function PATCH(
       method: "PATCH",
       headers: {
         "Authorization": AUTH_KEY || "",
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: formData,
     })
@@ -87,6 +88,7 @@ export async function DELETE(
       method: "DELETE",
       headers: {
         "Authorization": AUTH_KEY || "",
+        "User-Agent": "Tachyon-Hub/1.0",
       },
     })
 

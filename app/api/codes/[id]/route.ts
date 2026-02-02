@@ -27,6 +27,7 @@ export async function PATCH(
       headers: {
         "Content-Type": "application/json",
         "x-api-key": DEFAULT_API_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: JSON.stringify(body),
     })
@@ -62,6 +63,7 @@ export async function DELETE(
       method: "DELETE",
       headers: {
         "x-api-key": DEFAULT_API_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
     })
 

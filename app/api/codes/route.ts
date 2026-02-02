@@ -40,6 +40,7 @@ export async function GET(request: NextRequest) {
       {
         headers: {
           "x-api-key": DEFAULT_API_KEY,
+          "User-Agent": "Tachyon-Hub/1.0",
         },
       }
     )
@@ -56,6 +57,7 @@ export async function GET(request: NextRequest) {
               {
                 headers: {
                   "x-api-key": DEFAULT_API_KEY,
+                  "User-Agent": "Tachyon-Hub/1.0",
                 },
               }
             )
@@ -108,6 +110,7 @@ export async function POST(request: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "x-api-key": DEFAULT_API_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: JSON.stringify({
         discord_uid: session.user.id,

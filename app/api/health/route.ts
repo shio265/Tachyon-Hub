@@ -11,6 +11,7 @@ export async function GET() {
     const response = await fetch(`${API_BASE_URL}/`, {
       headers: {
         "x-api-key": DEFAULT_API_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       signal: controller.signal,
     })

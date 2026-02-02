@@ -35,6 +35,7 @@ export async function PATCH(
       headers: {
         "Content-Type": "application/json",
         "Authorization": AUTH_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: JSON.stringify(body),
     })

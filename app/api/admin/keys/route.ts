@@ -41,6 +41,7 @@ export async function POST(request: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         Authorization: AUTH_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: JSON.stringify(requestBody),
     })

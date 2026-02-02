@@ -1,4 +1,5 @@
 import { Reward } from "@/lib/types"
+import { fetchWithUserAgent } from "@/lib/utils"
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 
@@ -9,7 +10,7 @@ export async function getCodesWithApiKey(apiKey: string, filters?: { active?: bo
 
   const url = `${API_BASE_URL}/api/v1/strinova/code${params.toString() ? `?${params}` : ""}`
 
-  const response = await fetch(url, {
+  const response = await fetchWithUserAgent(url, {
     headers: {
       "x-api-key": apiKey,
     },
@@ -31,7 +32,7 @@ export async function createCode(
     rewards?: Reward[]
   }
 ) {
-  const response = await fetch(`${API_BASE_URL}/api/v1/strinova/code`, {
+  const response = await fetchWithUserAgent(`${API_BASE_URL}/api/v1/strinova/code`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +50,7 @@ export async function createCode(
 }
 
 export async function getApiKeyByDiscordId(discordId: string, authToken: string) {
-  const response = await fetch(`${API_BASE_URL}/api/v1/admin/keys/discord/${discordId}`, {
+  const response = await fetchWithUserAgent(`${API_BASE_URL}/api/v1/admin/keys/discord/${discordId}`, {
     headers: {
       Authorization: authToken,
     },

@@ -22,6 +22,7 @@ export async function GET(
       {
         headers: {
           Authorization: AUTH_KEY,
+          "User-Agent": "Tachyon-Hub/1.0",
         },
       }
     )

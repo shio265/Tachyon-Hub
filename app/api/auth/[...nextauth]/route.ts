@@ -19,6 +19,7 @@ async function ensureUploaderExists(discordId: string, name: string) {
       {
         headers: {
           Authorization: AUTH_KEY,
+          "User-Agent": "Tachyon-Hub/1.0",
         },
       }
     )
@@ -34,6 +35,7 @@ async function ensureUploaderExists(discordId: string, name: string) {
       headers: {
         "Content-Type": "application/json",
         Authorization: AUTH_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: JSON.stringify({
         name: name,
@@ -72,6 +74,7 @@ export const authOptions: AuthOptions = {
             {
               headers: {
                 Authorization: AUTH_KEY,
+                "User-Agent": "Tachyon-Hub/1.0",
               },
             }
           )

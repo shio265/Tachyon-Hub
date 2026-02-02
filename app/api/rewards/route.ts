@@ -11,6 +11,7 @@ export async function GET() {
     const response = await fetch(`${API_BASE_URL}/api/v1/rewards`, {
       headers: {
         "x-api-key": DEFAULT_API_KEY,
+        "User-Agent": "Tachyon-Hub/1.0",
       },
     })
 
@@ -51,6 +52,7 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: {
         "Authorization": AUTH_KEY || "",
+        "User-Agent": "Tachyon-Hub/1.0",
       },
       body: formData,
     })
