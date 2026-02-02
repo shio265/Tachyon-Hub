@@ -39,13 +39,13 @@ export function Footer() {
             <Separator orientation="vertical" className="h-12" />
             
             <div className="flex flex-col gap-1">
-                <Link href="/support" className="text-muted-foreground font-medium hover:underline flex items-center gap-1">
-                    Support Us <RiHandHeartLine className="text-red-500 h-5 w-5"/>
-                </Link>
+                <div className="text-muted-foreground font-medium flex items-center gap-1">
+                    Support Shiorin <RiHandHeartLine className="text-red-500 h-5 w-5"/>
+                </div>
                 <Separator className="my-0.5"/>
-                <span className="text-muted-foreground text-xs">
+                <Link href="https://github.com/sponsors/shio265" target="_blank" rel="noopener noreferrer" className="hover:underlinetext-muted-foreground text-xs">
                     To keep Tachyon Hub running
-                </span>
+                </Link>
             </div>
           </div>
         </div>
