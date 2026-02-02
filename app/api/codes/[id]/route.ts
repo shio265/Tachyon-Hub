@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "../../auth/[...nextauth]/route"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const DEFAULT_API_KEY = process.env.DEFAULT_API_KEY || ""
 
 export async function PATCH(
@@ -22,7 +22,7 @@ export async function PATCH(
     const { id } = await params
     const body = await request.json()
 
-    const response = await fetch(`${API_BASE_URL}/api/v1/strinova/code/${id}`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/strinova/code/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export async function DELETE(
 
     const { id } = await params
 
-    const response = await fetch(`${API_BASE_URL}/api/v1/strinova/code/${id}`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/strinova/code/${id}`, {
       method: "DELETE",
       headers: {
         "x-api-key": DEFAULT_API_KEY,

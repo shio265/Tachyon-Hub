@@ -37,7 +37,7 @@ NEXTAUTH_SECRET=your-secret-key
 DISCORD_CLIENT_ID=your-discord-client-id
 DISCORD_CLIENT_SECRET=your-discord-client-secret
 DISCORD_SUPPORT_URL=https://discord.gg/your-server
-API_BASE_URL=http://localhost:4000
+NEXT_PUBLIC_API_URL=http://localhost:4000
 AUTH_KEY=your-auth-key
 DEFAULT_API_KEY=your-default-api-key
 ```

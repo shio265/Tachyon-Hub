@@ -11,7 +11,7 @@ export async function fetchWithUserAgent(
   init?: RequestInit
 ): Promise<Response> {
   const headers = new Headers(init?.headers)
-  headers.set("User-Agent", "Tachyon-Hub/1.0")
+  headers.set("User-Agent", "Next.js")
   
   return fetch(input, {
     ...init,

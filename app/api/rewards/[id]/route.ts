@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const AUTH_KEY = process.env.AUTH_KEY
 
 export async function PATCH(
@@ -31,7 +31,7 @@ export async function PATCH(
     const formData = await request.formData()
     
     // Forward the form data to the backend API
-    const response = await fetch(`${API_BASE_URL}/api/v1/rewards/${id}`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/rewards/${id}`, {
       method: "PATCH",
       headers: {
         "Authorization": AUTH_KEY || "",
@@ -84,7 +84,7 @@ export async function DELETE(
     const { id } = await params
     
     // Forward the delete request to the backend API
-    const response = await fetch(`${API_BASE_URL}/api/v1/rewards/${id}`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/rewards/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": AUTH_KEY || "",

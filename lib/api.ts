@@ -1,14 +1,14 @@
 import { Reward } from "@/lib/types"
 import { fetchWithUserAgent } from "@/lib/utils"
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 
 export async function getCodesWithApiKey(apiKey: string, filters?: { active?: boolean; reward?: string }) {
   const params = new URLSearchParams()
   if (filters?.active !== undefined) params.set("active", String(filters.active))
   if (filters?.reward) params.set("reward", filters.reward)
 
-  const url = `${API_BASE_URL}/api/v1/strinova/code${params.toString() ? `?${params}` : ""}`
+  const url = `${NEXT_PUBLIC_API_URL}/api/v1/strinova/code${params.toString() ? `?${params}` : ""}`
 
   const response = await fetchWithUserAgent(url, {
     headers: {
@@ -32,7 +32,7 @@ export async function createCode(
     rewards?: Reward[]
   }
 ) {
-  const response = await fetchWithUserAgent(`${API_BASE_URL}/api/v1/strinova/code`, {
+  const response = await fetchWithUserAgent(`${NEXT_PUBLIC_API_URL}/api/v1/strinova/code`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export async function createCode(
 }
 
 export async function getApiKeyByDiscordId(discordId: string, authToken: string) {
-  const response = await fetchWithUserAgent(`${API_BASE_URL}/api/v1/admin/keys/discord/${discordId}`, {
+  const response = await fetchWithUserAgent(`${NEXT_PUBLIC_API_URL}/api/v1/admin/keys/discord/${discordId}`, {
     headers: {
       Authorization: authToken,
     },

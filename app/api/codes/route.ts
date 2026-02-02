@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "../auth/[...nextauth]/route"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const DEFAULT_API_KEY = process.env.DEFAULT_API_KEY || ""
 
 interface ApiCodeResponse {
@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
     }
 
     const response = await fetch(
-      `${API_BASE_URL}/api/v1/strinova/code?${params.toString()}`,
+      `${NEXT_PUBLIC_API_URL}/api/v1/strinova/code?${params.toString()}`,
       {
         headers: {
           "x-api-key": DEFAULT_API_KEY,
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
         data.data.map(async (code: ApiCodeResponse) => {
           try {
             const uploaderResponse = await fetch(
-              `${API_BASE_URL}/api/v1/uploaders/${code.uploader_id}`,
+              `${NEXT_PUBLIC_API_URL}/api/v1/uploaders/${code.uploader_id}`,
               {
                 headers: {
                   "x-api-key": DEFAULT_API_KEY,
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    const response = await fetch(`${API_BASE_URL}/api/v1/strinova/code`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/strinova/code`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

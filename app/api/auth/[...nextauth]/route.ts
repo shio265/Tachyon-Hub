@@ -1,7 +1,7 @@
 import NextAuth, { AuthOptions } from "next-auth"
 import DiscordProvider from "next-auth/providers/discord"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const AUTH_KEY = process.env.AUTH_KEY || ""
 
 interface DiscordProfile {
@@ -15,7 +15,7 @@ async function ensureUploaderExists(discordId: string, name: string) {
   try {
     // Check if uploader exists
     const checkResponse = await fetch(
-      `${API_BASE_URL}/api/v1/uploaders/discord/${discordId}`,
+      `${NEXT_PUBLIC_API_URL}/api/v1/uploaders/discord/${discordId}`,
       {
         headers: {
           Authorization: AUTH_KEY,
@@ -30,7 +30,7 @@ async function ensureUploaderExists(discordId: string, name: string) {
     }
 
     // Create new uploader
-    await fetch(`${API_BASE_URL}/api/v1/uploaders`, {
+    await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/uploaders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export const authOptions: AuthOptions = {
       if (token.id) {
         try {
           const uploaderResponse = await fetch(
-            `${API_BASE_URL}/api/v1/uploaders/discord/${token.id}`,
+            `${NEXT_PUBLIC_API_URL}/api/v1/uploaders/discord/${token.id}`,
             {
               headers: {
                 Authorization: AUTH_KEY,

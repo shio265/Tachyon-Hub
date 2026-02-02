@@ -63,6 +63,7 @@ export default function DashboardPage() {
   const [createRewardDialogOpen, setCreateRewardDialogOpen] = useState(false)
   const [editRewardDialogOpen, setEditRewardDialogOpen] = useState(false)
   const [selectedReward, setSelectedReward] = useState<RewardOption | null>(null)
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -366,12 +367,12 @@ export default function DashboardPage() {
                   <CardDescription>
                     Use this key to authenticate API requests. You can find the API documentation at{" "}
                     <a
-                      href={`${process.env.API_BASE_URL || "http://localhost:4000"}/api-docs`}
+                      href={`${apiBaseUrl}/api-docs`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"
                     >
-                      {process.env.API_BASE_URL || "http://localhost:4000"}/api-docs
+                      {apiBaseUrl}/api-docs
                     </a>
                   </CardDescription>
                 </CardHeader>
@@ -530,12 +531,12 @@ export default function DashboardPage() {
                 <CardDescription>
                   Use this key to authenticate API requests. You can find the API documentation at{" "}
                   <a
-                    href={`${process.env.API_BASE_URL || "http://localhost:4000"}/api-docs`}
+                    href={`${apiBaseUrl}/api-docs`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:underline"
                   >
-                    {process.env.API_BASE_URL || "http://localhost:4000"}/api-docs
+                    {apiBaseUrl}/api-docs
                   </a>
                 </CardDescription>
               </CardHeader>

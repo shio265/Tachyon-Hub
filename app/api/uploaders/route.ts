@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const AUTH_KEY = process.env.AUTH_KEY
 
 export async function POST(request: NextRequest) {
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    const response = await fetch(`${API_BASE_URL}/api/v1/uploaders`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/uploaders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export async function GET() {
       )
     }
 
-    const response = await fetch(`${API_BASE_URL}/api/v1/uploaders`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/v1/uploaders`, {
       headers: {
         Authorization: AUTH_KEY,
         "User-Agent": "Tachyon-Hub/1.0",

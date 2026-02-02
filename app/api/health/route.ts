@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:4000"
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
 const DEFAULT_API_KEY = process.env.DEFAULT_API_KEY || ""
 
 export async function GET() {
@@ -8,7 +8,7 @@ export async function GET() {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 5000)
 
-    const response = await fetch(`${API_BASE_URL}/`, {
+    const response = await fetch(`${NEXT_PUBLIC_API_URL}/`, {
       headers: {
         "x-api-key": DEFAULT_API_KEY,
         "User-Agent": "Tachyon-Hub/1.0",
