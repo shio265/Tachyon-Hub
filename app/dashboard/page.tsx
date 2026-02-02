@@ -530,12 +530,12 @@ export default function DashboardPage() {
                 <CardDescription>
                   Use this key to authenticate API requests. You can find the API documentation at{" "}
                   <a
-                    href={`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000"}/api-docs`}
+                    href={`${process.env.API_BASE_URL || "http://localhost:4000"}/api-docs`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:underline"
                   >
-                    {process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000"}/api-docs
+                    {process.env.API_BASE_URL || "http://localhost:4000"}/api-docs
                   </a>
                 </CardDescription>
               </CardHeader>
