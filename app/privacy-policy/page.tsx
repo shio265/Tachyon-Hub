@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
             11. Contact Us
           </h2>
           <p className="leading-7 not-first:mt-6">
-            If you have any questions about this Privacy Policy or our data practices, please contact us through our Discord support server or via <a href="mailto:support@tachyonhub.com">email</a>.
+            If you have any questions about this Privacy Policy or our data practices, please contact us through our Discord support server or via <a href="mailto:support@tachyonhubs.tech" className="hover:underline">email</a>.
           </p>
         </section>
 
